@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+details de la prestation {{prestation.nom }}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-5">
+        <img class="img-show-admin" src="{{ asset('photosProduits/' ~ prestation.photo) }}" alt="{{ prestation.nom }}">
+    </div>
+    <div class="col-md-7 text-center">
+        <h1> Detail de la prestation n° {{ prestation.id }}</h1>
+        <h6 class="text-muted"><strong>date d'ajout : </strong> {{ prestation.dateEnregistrement | date('d/m/Y \à H\\hi')
+            }}
+        </h6>
+        <h5><strong>nom : </strong> {{ prestation.nom }}</h5>
+        <h5><strong>prixPrestation : </strong> {{ prestation.prixPrestation }}</h5>
+        <p><strong>description : </strong> {{ prestation.description }}</p>
+    </div>
+
+</div>
+{% endblock %}
